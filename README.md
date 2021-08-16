@@ -25,9 +25,9 @@ future_symbols = ["GGAL/AGO21",
                   "DLR/AGO21",
                   "DLR/SEP21"]
 ```
-**dias_spot:** son los dias hasta la liquidación del spot (aplica a todos los spots excepto el de dólar que se asume contado inmediato). Ejemplo 1) es lunes y los spots liquidan a 48hs, entonces dias_spot = 2 (si no hay feriados en el medio), 2) es jueves y los spots liquidan a 48hs, entonces dias_spot = 4. 
+**dias_spot:** son los dias hasta la liquidación del spot (aplica a todos los spots excepto el de dólar que se asume contado inmediato). Ejemplo 1) es lunes y los spots liquidan a 48hs, entonces dias_spot = 2 (si no hay feriados en el medio), 2) es jueves y los spots liquidan a 48hs, entonces dias_spot = 4 (sin feriados) 
 
-**spot_symbols:** contiene el nombre de los instrumentos spots de REMARKETS que se van a analizar. El spot de dólar no hace falta especificarlo ya que se lo agrega automáticamente
+**spot_symbols:** contiene el nombre de los instrumentos spots de REMARKETS que se van a analizar. El spot de dólar no hace falta especificarlo ya que se agrega automáticamente.
 
 Los precios BID y OFFER del spot de dólar se consulta a Yahoo Finance solamente al iniciar el bot porque es muy lenta la API.
 
@@ -35,9 +35,6 @@ Los precios BID y OFFER del spot de dólar se consulta a Yahoo Finance solamente
 
 Ejecutar el script **run.py**
 
-```
-python run.py
-```
 
 Cada vez que llegue una nueva market data, se printean en pantalla y se existe una posibilidad de arbitraje se detallan los instrumentos y las tasas:
 
@@ -51,9 +48,4 @@ Hay un arbitraje colocando en ['GGAL/AGO21'] con tasa 1020.98% y tomando en ['DL
 ## Tests unitarios
 
 Ejecutar el script **tests.py**
-
-```
-python tests.py
-```
-
 
